@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_s_draconami">
+
+    <fragment
+        android:id="@+id/fragment_s_draconami"
+        android:name="com.example.laboratornayanomerdva.Fragment_s_draconami"
+        android:label="fragment_blank_s_draconami"
+        tools:layout="@layout/fragment_blank_s_draconami" >
+        <action
+            android:id="@+id/action_fragment_s_draconami_to_fragment_Opisanie"
+            app:destination="@id/fragment_Opisanie" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_Opisanie"
+        android:name="com.example.laboratornayanomerdva.Fragment_Opisanie"
+        android:label="fragment__opisanie"
+        tools:layout="@layout/fragment__opisanie" >
+        <argument
+        android:name="Dracony"
+        app:argType="com.example.laboratornayanomerdva.Dracony"
+        />
+    </fragment>
+</navigation>
