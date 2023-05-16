@@ -1,5 +1,6 @@
 package com.example.laboratornayanomerdva
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,15 +14,16 @@ class Adapter_s_draconami (val launchFragment: (Dracony)->Unit): RecyclerView.Ad
     inner class Dracon_ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     {
         private val binding = ItemBlablablaBinding.bind(itemView)
-        fun bindFun(film: Dracony)
+        fun bindFun(Dracon: Dracony)
         {
             binding.card.setOnClickListener{
                 launchFragment(DraconList[adapterPosition])
             }
-            Glide.with(binding.ivItemDracon.context).load(film.image).into(binding.ivItemDracon)
+            Glide.with(binding.ivItemDracon.context).load(Dracon.image).into(binding.ivItemDracon)
 
-            binding.tvDracon.text=film.name
+            binding.tvDracon.text=Dracon.name
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Dracon_ViewHolder
@@ -40,9 +42,9 @@ class Adapter_s_draconami (val launchFragment: (Dracony)->Unit): RecyclerView.Ad
         return DraconList.size
     }
 
-    fun addDracon(filmSet: List<Dracony>)
+    fun addDracon(Dracon_List: List<Dracony>)
     {
-        DraconList.addAll(filmSet)
+        DraconList.addAll(Dracon_List)
         notifyDataSetChanged()
     }
 }
